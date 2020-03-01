@@ -1,0 +1,10 @@
+@import '../../../../styles.scss';
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100vw;
+  height: 5rem;
+}
