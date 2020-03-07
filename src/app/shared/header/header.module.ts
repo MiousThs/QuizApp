@@ -3,19 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from '../material.module';
-import { MainNavComponent } from './main-nav/main-nav.component';
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    MainNavComponent
+    HeaderComponent
   ],
   imports: [
     CommonModule,
     MaterialModule
   ],
-  exports: [ HeaderComponent ]
+  exports: [
+    HeaderComponent
+  ]
 })
 export class HeaderModule { }
