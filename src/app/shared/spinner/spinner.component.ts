@@ -5,35 +5,33 @@ import { filter } from 'rxjs/operators';
 import { SpinnerService } from './spinner.service';
 
 @Component({
-  selector: 'app-spinner',
-  templateUrl: './spinner.component.html',
-  styleUrls: ['./spinner.component.scss']
+    selector: 'app-spinner',
+    templateUrl: './spinner.component.html',
+    styleUrls: ['./spinner.component.scss'],
 })
 export class SpinnerComponent implements OnInit {
-  public isLoading$: Observable<boolean>;
+    public isLoading$: Observable<boolean>;
 
-  constructor(private router: Router,
-              private spinnerService: SpinnerService) { }
+    constructor(private router: Router, private spinnerService: SpinnerService) {}
 
-  ngOnInit(): void {
-    this.isLoading$ = this.spinnerService.isLoading$;
-    this.router.events
-      .pipe(
-        filter(
-          (event: RouterEvent) => event instanceof NavigationStart ||
-                                  event instanceof NavigationEnd ||
-                                  event instanceof NavigationCancel ||
-                                  event instanceof NavigationError
-        )
-      ).subscribe(
-        (event: RouterEvent) => {
-          if (event instanceof NavigationStart) {
-            this.spinnerService.show();
-            return;
-          }
-          this.spinnerService.hide();
-        }
-      )
-  }
-
+    public ngOnInit(): void {
+        this.isLoading$ = this.spinnerService.isLoading$;
+        this.router.events
+            .pipe(
+                filter(
+                    (event: RouterEvent) =>
+                        event instanceof NavigationStart ||
+                        event instanceof NavigationEnd ||
+                        event instanceof NavigationCancel ||
+                        event instanceof NavigationError
+                )
+            )
+            .subscribe((event: RouterEvent) => {
+                if (event instanceof NavigationStart) {
+                    this.spinnerService.show();
+                    return;
+                }
+                this.spinnerService.hide();
+            });
+    }
 }
