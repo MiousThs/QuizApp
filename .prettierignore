@@ -1,0 +1,14 @@
+dist/
+e2e/
+coverage/
+tmp/
+out-tsc/
+bazel-out/
+node_modules/
+.vscode/
+.idea/
+.vscode/
+.prettierignore
+package-lock.json
+package.json
+yarn.lock
