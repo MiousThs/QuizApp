@@ -1,0 +1,13 @@
+@import './../../../styles.scss';
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.home {
+    width: 100%;
+    height: calc(100vh - 64px);
+    background-color: $main-grey;
+}
