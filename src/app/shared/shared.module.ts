@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-import { SpinnerModule } from './spinner/spinner.module';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { MaterialModule } from './material.module';
 
-const modules = [
-  SpinnerModule
-];
+const modules = [RouterModule];
 @NgModule({
-  declarations: [],
-  imports: [ CommonModule, ...modules ],
-  exports: [...modules]
+    declarations: [PageNotFoundComponent],
+    imports: [CommonModule, MaterialModule, ...modules],
+    exports: [PageNotFoundComponent, ...modules],
 })
-export class SharedModule { }
+export class SharedModule {}
